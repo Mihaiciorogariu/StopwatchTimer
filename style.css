@@ -1,0 +1,125 @@
+@font-face {
+    font-family: 'font';
+    src: url('./Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'font2';
+    src: url('./Montserrat/static/Montserrat-Medium.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body{
+    background: linear-gradient(25deg,rgb(60, 190, 250),#0062d1 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: sans-serif;
+}
+
+.container{
+    background-color: #eee9e9;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.stopwatch{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.title{
+    font-size: 30px;
+    margin-bottom: 1.5rem;
+    font-family: 'font', sans-serif;
+}
+
+.timer{
+    font-size: 40px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 12p rgba(0,0,0,0.1);
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    from{
+        transform: scale(1);
+    }
+    
+    to{
+        transform: scale(1.05);
+    }
+}
+
+.timer span{
+    width: 110px;
+    display: inline-block;
+    text-align: center;
+}
+
+.controls{
+    display: flex;
+    gap: 1rem;
+}
+
+button{
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    background-color: #0dd2ec;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-family: 'font2', sans-serif;
+}
+
+button:hover{
+    background-color: #2aa5df; 
+}
+
+.lap-title{
+    font-size: 1.5rem;
+    font-family: 'font', sans-serif;
+}
+
+.laps{
+    width: 100%;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    max-height: 200px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+li{
+    padding: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+li:last-child{
+    border-bottom: none;
+}
+
+li span{
+    font-weight: 700;
+}
