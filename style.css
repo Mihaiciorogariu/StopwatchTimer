@@ -13,7 +13,7 @@
 }
 
 body{
-    background: linear-gradient(25deg,rgb(60, 190, 250),#0062d1 50%);
+    background: linear-gradient(20deg,rgb(81, 190, 240),#6b01f7 70%);
     display: flex;
     justify-content: center;
     align-items: center;

@@ -6,6 +6,7 @@ const startButton = document.getElementById('startBtn');
 const stopButton = document.getElementById('stopBtn');
 const pauseButton = document.getElementById('pauseBtn');
 const resetButton = document.getElementById('resetBtn');
+const clearButton = document.getElementById('clearLapsBtn');
 
 const lapList=document.getElementById('laplist');
 
@@ -20,6 +21,9 @@ startButton.addEventListener('click', startTimer);
 stopButton.addEventListener('click', stopTimer);
 pauseButton.addEventListener('click', pauseTimer);
 resetButton.addEventListener('click', resetTimer);
+clearButton.addEventListener('click', reloadLaps);
+
+
 
 function startTimer()
 {
@@ -48,6 +52,15 @@ function resetTimer()
     resetTimerData();
     resetButton.disabled=false;
     startButton.disabled=false;
+}
+
+function reloadLaps()
+{
+    clearInterval(interval);
+    resetTimerData();
+    removeLaps();
+    startButton.disabled=false;
+
 }
 
 function updateTimer()
@@ -96,4 +109,9 @@ function addToLapList()
     const listItem = document.createElement('li');
     listItem.innerHTML = `<span> Lap ${lapList.childElementCount + 1}:  </span> ${lapTime}`;
     lapList.appendChild(listItem);
+}
+
+function removeLaps()
+{
+    lapList.innerHTML = '';
 }
